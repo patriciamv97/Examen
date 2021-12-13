@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Atributos en común :
+         android:id -> sirve para asignarle un nombre al elemento con el que nos referiremos
+         y podremos hacer referencia a el en otras clases obteniendo su id
+         android: text -> En la mayoria de elementos de el layout viene escrito un texto por defecto
+         este texto se lo puedes cambiar con  android:text
+         Los siguientes atributos sirven para determinar el largo y ancho del elemento en el layout.
+         Pueden tener los siguientes valores :
+         wrap_content (la vista se expande solo lo necesario para ajustarse a su contenido)
+         match constraint( vista se expande tanto como sea posible para ajustarse a las restricciones de cada lado)
+         android:layout_width
+         android:layout_height
+         El atribuito siguiente sirve para establecer el margen que dejará el elemento con respecto a la parte de
+         abajo del layout
+         android:layout_marginBottom-> tamaño en dp
+         Los siguientes atributos indican dónde empiezan  y terminan las restricciones del elemento button
+         app:layout_constraintEnd_toEndOf->
+         app:layout_constraintHorizontal_bias->
+         app:layout_constraintStart_toStartOf->
+         app:layout_constraintTop_toBottomOf->
+
+         -->
+
+    <!-- Atributo del elemento Button NO COMÚN con el resto de los elementos del layout
+    -->
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="333dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+    <!-- Atributos del elemento EditText NO COMUNES con el resto de los elementos del layout
+         android:textColor-> Atributo que indica y con el que se puede cambiar el color del texto
+         android:textSize->  Atributo que indica y con el tamaño del texto
+         android:textAlignment -> Atributo que indica el alineamiento del texto en el elemento, en este
+         caso se indica que se alinea en el centro
+
+     -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="314dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginBottom="130dp"
+        android:text="Examen PMDM"
+        android:textAlignment="center"
+        android:textColor="#6200EA"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Atributos del elemento EditText NO COMUNES con el resto de los elementos del layout
+         android:ems->establece el ancho de un TextView para ajustar un texto de n 'M' letras,
+         independientemente de la extensión de texto real y el tamaño del texto
+         android:inputType-> permite especificar varios comportamientos para el método de entrada
+         android:minHeight-> altura minima del elemento
+       -->
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="45dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="Introduzca la nota"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
